@@ -7,6 +7,8 @@ import{
 import Home from "./pages/home/Home"
 import List from "./pages/list/List"
 import Service from "./pages/service/Service";
+import AdminPage from "./pages/admin/AdminPage";
+import Login from "./pages/login/Login";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
           <Route path="/" element = {<Home/>} />
           <Route path="/services" element = {<List/>} />
           <Route path="/services/:id" element = {<Service/>} />
+          <Route path="/admin" element={<AdminPage/>} />
+          <Route path="/login" element={<Login/>} />
         </Routes>
       </BrowserRouter>
     </div>

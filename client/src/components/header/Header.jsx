@@ -1,16 +1,29 @@
 import React from 'react'
 import "./Header.css"
+import { useNavigate } from "react-router-dom";
+
+
 
 const Header = ({type}) => {
+
+  const navigate = useNavigate()
+
+  const handleClick = async (e) => {
+    e.preventDefault();
+    try {
+      navigate("/services")
+    } catch (err) {
+    }
+  };
+
   return (
     <div className="header">
         <div className="headerContainer">
         {type!=="list" && <><h1 className="headerTitle">
-        A lifetime of discounts? It's Genius.
+        Washing Done Right
         </h1>
         <p className="headerDesc">
-              Get rewarded for your travels – unlock instant savings of 10% or
-              more with a free Lamabooking account
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque veniam est, et amet nam quas aperiam nulla omnis ex hic eius provident ratione minus accusamus libero nihil nemo at odio.
             </p>
         <button className="headerBtn">Sign in / Register</button>
 
@@ -22,7 +35,7 @@ const Header = ({type}) => {
             </div>
 
             <div className="headerSearchItem">
-                <button className="headerBtn">Search</button>
+                <button className="headerBtn" onClick={handleClick}>Search</button>
             </div>
         </div>
         </>}

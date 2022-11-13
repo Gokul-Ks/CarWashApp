@@ -1,5 +1,6 @@
-import User from "../models/User";
+import User from "../models/User.js";
 import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
 
 export const register = async (req, res, next) => {
     try {
@@ -41,7 +42,7 @@ export const register = async (req, res, next) => {
           httpOnly: true,
         })
         .status(200)
-        .json({ details: { ...otherDetails }, isAdmin });
+        .json( { ...otherDetails } );
     } catch (err) {
       next(err);
     }

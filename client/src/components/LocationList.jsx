@@ -5,9 +5,9 @@ const LocationFilter = (props) => (<Filter {... props}>
     <SearchInput placeholder='Location' source = 'location' ></SearchInput>
 </Filter>)
 
-const UserList = (props) => {
+const LocationList = (props) => {
   return (
-    <List {...props} filters={<CustomerFilter />}>
+    <List {...props} filters={<LocationFilter />}>
         <Datagrid>
             <TextField source='name'/>
             <TextField source='location'/>

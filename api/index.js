@@ -4,6 +4,8 @@ import mongoose from "mongoose";
 import authRoute from "./routes/auth.js";
 import usersRoute from "./routes/users.js";
 import locationRoute from "./routes/locations.js";
+import bookingRoute from "./routes/booking.js"
+import cookieParser from "cookie-parser";
 const app = express();
 dotenv.config();
 
@@ -21,13 +23,14 @@ mongoose.connection.on("disconnected", () => {
 });
 
 
-//middlewares
 
+//middlewares
+app.use(cookieParser());
 app.use(express.json())
 app.use("/api/auth",authRoute)
 app.use("/api/users",usersRoute)
 app.use("/api/locations",locationRoute)
-
+app.use("/api/booking",bookingRoute)
 app.get("/users",(req,res)=>{
     res.send("hello")
 })

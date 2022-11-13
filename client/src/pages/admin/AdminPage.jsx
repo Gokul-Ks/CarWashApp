@@ -1,6 +1,6 @@
 import React from 'react'
 import {Admin, Resource} from 'react-admin'
-import UserList from '../../components/UserList'
+import UserList from '../../components/LocationList'
 import lb4Provider from 'react-admin-lb4'
 
 const AdminPage = () => {
